@@ -25,6 +25,7 @@ const run = async (): Promise<void> => {
     synthetics.utils.reportExitLogs(reporter, config, {results})
 
     const exitReason = synthetics.utils.getExitReason(config, {results})
+    core.setOutput('batchUrl', synthetics.utils.getBatchUrl(synthetics.utils.getAppBaseURL(config), summary.batchId))
     if (exitReason !== 'passed') {
       core.setFailed(`Datadog Synthetics tests failed: ${printSummary(summary, config)}`)
     } else {
