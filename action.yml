@@ -48,6 +48,9 @@ inputs:
   variables:
     required: false
     description: 'Comma-separated list of variable_name=variable_value pairs.'
+outputs:
+  batchUrl:
+    description: 'The batchUrl for the test results.'
 
 runs:
   using: 'node20'
